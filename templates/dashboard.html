@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1>Dashboard de Tarefas</h1>
+        <div class="header-option">
+            <a href="{{ url_for('logout') }}" class="link-button">Sair</a>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Formulário para criar novas tarefas -->
+        <div class="create-task-form">
+            <h2>Criar Nova Tarefa</h2>
+            <form action="{{ url_for('create_task_route') }}" method="POST">
+                <label for="title">Título</label>
+                <input type="text" id="title" name="title" required />
+
+                <label for="description">Descrição</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                    <option value="open">Aberta</option>
+                    <option value="in_progress">Em Progresso</option>
+                    <option value="completed">Concluída</option>
+                </select>
+
+                <label for="assignee_id">Atribuído a</label>
+                <select id="assignee_id" name="assignee_id">
+                    <option value="">Nenhum</option>
+                    {% for user in users %}
+                    <option value="{{ user.id }}">{{ user.username }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit" class="btn">Criar Tarefa</button>
+            </form>
+        </div>
+        
+        <!-- Tabela de tarefas existentes -->
+        <div class="dashboard-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Status</th>
+                        <th>Criador</th>
+                        <th>Atribuído a</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.task.title }}</td>
+                        <td>{{ task.task.description }}</td>
+                        <td>{{ task.task.status }}</td>
+                        <td>{{ task.creator.username }}</td>
+                        <td>{{ task.assignee.username if task.assignee else 'Nenhum' }}</td>
+                        <td>
+                            <a href="{{ url_for('edit_task', task_id=task.task.id) }}" class="btn">Editar</a>
+                            <form action="{{ url_for('change_task_status', task_id=task.task.id) }}" method="POST" style="display:inline;">
+                                <select name="status" onchange="this.form.submit()">
+                                    <option value="open" {% if task.task.status == 'open' %}selected{% endif %}>Aberta</option>
+                                    <option value="in_progress" {% if task.task.status == 'in_progress' %}selected{% endif %}>Em Progresso</option>
+                                    <option value="completed" {% if task.task.status == 'completed' %}selected{% endif %}>Concluída</option>
+                                </select>
+                            </form>
+                            <form action="{{ url_for('delete_task', task_id=task.task.id) }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn">Deletar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

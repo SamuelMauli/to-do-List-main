@@ -1,0 +1,695 @@
+/* Reset básico para garantir uma aparência consistente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Estilo para navegação */
+nav {
+  background-color: #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para o header */
+.header {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.header-option {
+  margin-top: 10px;
+}
+
+.header-option .link-button {
+  padding: 5px 10px;
+  color: #ffffff;
+  background-color: #333333;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.header-option .link-button:hover {
+  background-color: #444444;
+}
+
+/* Estilo para contêineres de formulário */
+.form-container,
+.container-form {
+  background-color: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-container h2,
+.container-form h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container label,
+.container-form label {
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+/* Estilos específicos para o Dashboard */
+.dashboard-header {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: center;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.dashboard-header .header-option {
+  margin-top: 10px;
+}
+
+.dashboard-header .header-option .link-button {
+  padding: 5px 10px;
+  color: #ffffff;
+  background-color: #333333;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.dashboard-header .header-option .link-button:hover {
+  background-color: #444444;
+}
+
+/* Estilos específicos para a tabela do Dashboard */
+.dashboard-table {
+  margin-top: 20px;
+}
+
+.dashboard-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  border: 1px solid #555;
+  padding: 10px;
+  text-align: left;
+}
+
+.dashboard-table th {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.dashboard-table tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+.dashboard-table tr:hover {
+  background-color: #444;
+}
+
+/* Estilos específicos para a página de Edição de Tarefa */
+.edit-task-header {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: center;
+}
+
+.edit-task-header h1 {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.edit-task-form {
+  background-color: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.edit-task-form label {
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.edit-task-form input[type="text"],
+.edit-task-form textarea,
+.edit-task-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+.edit-task-form textarea {
+  height: 100px;
+}
+
+.edit-task-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.edit-task-form button:hover {
+  background-color: #0056b3;
+}
+/* Estilos específicos para o formulário de criação de tarefas */
+.create-task-form {
+  background-color: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.create-task-form h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.create-task-form label {
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.create-task-form input[type="text"],
+.create-task-form textarea,
+.create-task-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+.create-task-form textarea {
+  height: 100px;
+}
+
+.create-task-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create-task-form button:hover {
+  background-color: #0056b3;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.container-form input,
+.container-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.form-container input[type="text"]::placeholder,
+.form-container input[type="password"]::placeholder,
+.container-form input::placeholder,
+.container-form textarea::placeholder {
+  color: #888;
+}
+
+.form-container button,
+.container-form button.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #7289da;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-container button:hover,
+.container-form button.submit-button:hover {
+  background-color: #5b6eae;
+}
+
+.form-container p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-container a,
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-container a:hover,
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para tabelas de tarefas */
+.container-table {
+  margin-top: 20px;
+}
+
+.container-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container-table th,
+.container-table td {
+  border: 1px solid #555;
+  padding: 10px;
+  text-align: left;
+}
+
+.container-table th {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.container-table tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+.container-table tr:hover {
+  background-color: #444;
+}
+
+/* Estilos específicos para login e registro */
+.login-register-container,
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2c2c2c;
+}
+
+.login-form,
+.register-page .form-container {
+  background-color: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-form h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  color: #ccc;
+  font-size: 14px;
+  width: 100%;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  background-color: #23272a;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.form-group input::placeholder {
+  color: #888;
+}
+
+/* Estilo para botões */
+.button.btn,
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #7289da;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button.btn:hover,
+.btn:hover {
+  background-color: #5b6eae;
+}
+
+/* Estilo para links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para link de registro */
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.register-link a {
+  color: #7289da;
+}
+
+.register-link a:hover {
+  color: #5b6eae;
+}
+/* Reset básico para garantir uma aparência consistente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Estilo para navegação */
+nav {
+  background-color: #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para o header */
+.header {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.header-option {
+  margin-top: 10px;
+}
+
+.header-option .link-button {
+  padding: 5px 10px;
+  color: #ffffff;
+  background-color: #333333;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.header-option .link-button:hover {
+  background-color: #444444;
+}
+
+/* Estilo para contêineres de formulário */
+.form-container,
+.container-form {
+  background-color: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-container h2,
+.container-form h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container label,
+.container-form label {
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.container-form input,
+.container-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.form-container input[type="text"]::placeholder,
+.form-container input[type="password"]::placeholder,
+.container-form input::placeholder,
+.container-form textarea::placeholder {
+  color: #888;
+}
+
+.form-container button,
+.container-form button.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #7289da;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-container button:hover,
+.container-form button.submit-button:hover {
+  background-color: #5b6eae;
+}
+
+.form-container p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-container a,
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-container a:hover,
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para tabelas de tarefas */
+.container-table {
+  margin-top: 20px;
+}
+
+.container-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container-table th,
+.container-table td {
+  border: 1px solid #555;
+  padding: 10px;
+  text-align: left;
+}
+
+.container-table th {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.container-table tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+.container-table tr:hover {
+  background-color: #444;
+}
+
+/* Estilos específicos para login e registro */
+.login-register-container,
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2c2c2c;
+}
+
+.login-form,
+.register-page .form-container {
+  background-color: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-form h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  color: #ccc;
+  font-size: 14px;
+  width: 100%;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  background-color: #23272a;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.form-group input::placeholder {
+  color: #888;
+}
+
+/* Estilo para botões */
+.button.btn,
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #7289da;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button.btn:hover,
+.btn:hover {
+  background-color: #5b6eae;
+}
+
+/* Estilo para links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para link de registro */
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.register-link a {
+  color: #7289da;
+}
+
+.register-link a:hover {
+  color: #5b6eae;
+}

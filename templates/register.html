@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<div class="login-register-container register-page">
+  <div class="form-container">
+    <form method="POST">
+      <h2>Registro</h2>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit" class="btn">Registrar</button>
+      <p>Já tem uma conta? <a href="{{ url_for('login') }}">Faça login</a></p>
+    </form>
+  </div>
+</div>
+{% endblock %}

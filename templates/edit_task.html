@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Tarefa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="edit-task-header">
+        <h1>Editar Tarefa</h1>
+        <div class="header-option">
+            <a href="{{ url_for('dashboard') }}" class="link-button">Voltar</a>
+        </div>
+    </div>
+    <div class="container">
+        <form action="{{ url_for('edit_task', task_id=task.id) }}" method="POST" class="edit-task-form">
+            <label for="title">Título</label>
+            <input type="text" id="title" name="title" value="{{ task.title }}" required />
+
+            <label for="description">Descrição</label>
+            <textarea id="description" name="description" required>{{ task.description }}</textarea>
+
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+                <option value="open" {% if task.status == 'open' %}selected{% endif %}>Aberta</option>
+                <option value="in_progress" {% if task.status == 'in_progress' %}selected{% endif %}>Em Progresso</option>
+                <option value="completed" {% if task.status == 'completed' %}selected{% endif %}>Concluída</option>
+            </select>
+
+            <label for="assignee_id">Atribuído a</label>
+            <select id="assignee_id" name="assignee_id">
+                <option value="">Nenhum</option>
+                {% for user in users %}
+                <option value="{{ user.id }}" {% if user.id == task.assignee_id %}selected{% endif %}>{{ user.username }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="btn">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>
