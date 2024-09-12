@@ -51,7 +51,7 @@ As dependências necessárias para o projeto estão listadas em `requirements.tx
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-repositorio/to-do-List-main.git
+   git clone https://github.com/SamuelMauli/to-do-List-main
    ```
 
 2. **Instale as Dependências:**
